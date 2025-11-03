@@ -44,6 +44,7 @@ git push -u origin main
 1. In Vercel Dashboard → Your Project → Settings → Domains
 2. Add domain: `awisenetwork.org`
 3. Configure DNS records (provided by Vercel):
+
    ```
    Type: A
    Name: @
@@ -57,6 +58,7 @@ git push -u origin main
 #### Step 4: Environment Variables (When Needed)
 
 In Vercel Dashboard → Settings → Environment Variables, add:
+
 - `DATABASE_URL` (when adding database)
 - `NEXTAUTH_SECRET` (when adding authentication)
 - `MAILCHIMP_API_KEY` (for email integration)
@@ -78,6 +80,7 @@ netlify deploy --prod
 ### Option 3: Self-Hosted (VPS/Cloud)
 
 #### Requirements
+
 - Node.js 18+
 - PM2 or similar process manager
 - Nginx as reverse proxy
@@ -85,11 +88,13 @@ netlify deploy --prod
 #### Steps
 
 1. **Build the application**
+
 ```bash
 npm run build
 ```
 
 2. **Start with PM2**
+
 ```bash
 pm2 start npm --name "awise-network" -- start
 pm2 save
@@ -97,6 +102,7 @@ pm2 startup
 ```
 
 3. **Configure Nginx**
+
 ```nginx
 server {
     listen 80;
@@ -114,6 +120,7 @@ server {
 ```
 
 4. **SSL with Let's Encrypt**
+
 ```bash
 sudo certbot --nginx -d awisenetwork.org -d www.awisenetwork.org
 ```
@@ -133,6 +140,7 @@ sudo certbot --nginx -d awisenetwork.org -d www.awisenetwork.org
 ### Enable Analytics
 
 1. **Vercel Analytics** (Automatic)
+
    - Already enabled if deployed on Vercel
    - View in Dashboard → Analytics
 
@@ -160,6 +168,7 @@ sudo certbot --nginx -d awisenetwork.org -d www.awisenetwork.org
 ## 🐛 Troubleshooting
 
 ### Build Fails
+
 ```bash
 # Clear cache
 rm -rf .next node_modules
@@ -168,22 +177,27 @@ npm run build
 ```
 
 ### 404 on Routes
+
 Check `vercel.json` rewrites configuration
 
 ### Static Export Issues
+
 Ensure dynamic features are client-side rendered with `'use client'`
 
 ## 🔄 Updates & Maintenance
 
 ### Deploy Updates
+
 ```bash
 git add .
 git commit -m "Update: description of changes"
 git push
 ```
+
 Vercel will automatically redeploy.
 
 ### Rollback
+
 In Vercel Dashboard → Deployments → Click previous deployment → Promote to Production
 
 ## 📈 Optimization Targets
@@ -197,26 +211,31 @@ In Vercel Dashboard → Deployments → Click previous deployment → Promote to
 ## 🎯 Next Steps After Deployment
 
 1. **Add Real Authentication**
+
    - Implement NextAuth.js
    - Configure OAuth providers (Google, LinkedIn, Facebook)
    - Set up password reset flow
 
 2. **Add Database**
+
    - Set up PostgreSQL (Vercel Postgres or Supabase)
    - Implement Prisma ORM
    - Migrate data
 
 3. **Email Integration**
+
    - Connect Mailchimp or SendGrid
    - Set up automated welcome emails
    - Configure newsletter functionality
 
 4. **CMS Integration** (Optional)
+
    - Set up Sanity or Contentful
    - Create content schemas
    - Build admin content management
 
 5. **Payment Integration** (If needed)
+
    - Stripe for premium features
    - Event registration payments
 
@@ -229,6 +248,7 @@ In Vercel Dashboard → Deployments → Click previous deployment → Promote to
 ## 📞 Support
 
 For deployment issues:
+
 - Check Vercel logs
 - Review build output
 - Contact: tech@awisenetwork.org
@@ -236,4 +256,3 @@ For deployment issues:
 ---
 
 ✅ **Your AWISE Network website is ready for deployment!**
-
