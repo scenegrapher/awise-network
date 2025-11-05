@@ -19,15 +19,18 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           <Link href="/about" className="text-foreground hover:text-primary transition">
             About
           </Link>
           <Link href="/programs" className="text-foreground hover:text-primary transition">
             Programs
           </Link>
-          <Link href="/community" className="text-foreground hover:text-primary transition">
-            Community
+          <Link href="/resources" className="text-foreground hover:text-primary transition">
+            Resources
+          </Link>
+          <Link href="/blog" className="text-foreground hover:text-primary transition">
+            Blog
           </Link>
           <Link
             href="#join"
@@ -39,7 +42,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-foreground"
+          className="lg:hidden text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -49,7 +52,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="lg:hidden bg-white border-t">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             <Link
               href="/about"
@@ -66,11 +69,18 @@ export default function Header() {
               Programs
             </Link>
             <Link
-              href="/community"
+              href="/resources"
               className="text-foreground hover:text-primary transition py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Community
+              Resources
+            </Link>
+            <Link
+              href="/blog"
+              className="text-foreground hover:text-primary transition py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blog
             </Link>
             <Link
               href="#join"

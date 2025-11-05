@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart, Users, TrendingUp, Globe } from 'lucide-react';
+import WhatsAppButton from '@/components/shared/WhatsAppButton';
 
 const values = [
   {
@@ -322,6 +323,7 @@ export default function AboutPage() {
         </section>
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

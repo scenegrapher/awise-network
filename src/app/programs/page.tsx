@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { useState } from 'react';
+import ProgramQuiz from '@/components/shared/ProgramQuiz';
 
 interface Program {
   title: string;
@@ -79,9 +80,12 @@ export default function ProgramsPage() {
               <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6">
                 Choose Your Path to Impact
               </h1>
-              <p className="text-lg md:text-xl text-white/90">
+              <p className="text-lg md:text-xl text-white/90 mb-6">
                 Tailored programs for every stage of your social entrepreneurship journey
               </p>
+              <div className="flex justify-center">
+                <ProgramQuiz />
+              </div>
             </motion.div>
           </div>
         </section>
